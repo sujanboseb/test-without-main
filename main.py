@@ -113,6 +113,9 @@ def verify_webhook():
 def home():
     return "<pre>Nothing to see here. Checkout README.md to start.</pre>"
 
-# Start the server
+# WSGI entry point
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT)
+
+# Expose the WSGI application
+application = app  # This line makes the app callable by WSGI servers
